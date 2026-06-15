@@ -1,6 +1,7 @@
 #nullable enable
 using System.Diagnostics.CodeAnalysis;
 using Content.IntegrationTests.NUnit.Utilities;
+using Content.Shared.Chemistry.Components;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Toolshed.TypeParsers;
 using Robust.UnitTesting;
@@ -62,5 +63,10 @@ public static class ConstraintHelpers
         ent = null;
         validType = true; // Dunno what this type is!
         return false;
+    }
+
+    public static bool TryActualAsSolution<TActual>(TActual t, [NotNullWhen(true)] out Solution? solution)
+    {
+        return (solution = t as Solution) is not null;
     }
 }
