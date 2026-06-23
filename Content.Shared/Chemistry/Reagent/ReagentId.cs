@@ -1,4 +1,5 @@
 using Content.Shared.FixedPoint;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using System.Linq;
@@ -33,6 +34,11 @@ public partial struct ReagentId : IEquatable<ReagentId>
     {
         Prototype = default!;
         Data = new();
+    }
+
+    public static explicit operator ReagentId(ProtoId<ReagentPrototype> id)
+    {
+        return new ReagentId(id, null);
     }
 
     public List<ReagentData> EnsureReagentData()

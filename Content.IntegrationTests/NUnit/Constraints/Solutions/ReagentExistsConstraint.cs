@@ -3,9 +3,9 @@ using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Reagent;
 using NUnit.Framework.Constraints;
 
-namespace Content.IntegrationTests.NUnit.Constraints;
+namespace Content.IntegrationTests.NUnit.Constraints.Solutions;
 
-public sealed class ReagentConstraint(ReagentId reagent) : Constraint
+public sealed class ReagentExistsConstraint(ReagentId reagent) : Constraint
 {
     public override string Description => $"contains reagent {reagent}";
 
