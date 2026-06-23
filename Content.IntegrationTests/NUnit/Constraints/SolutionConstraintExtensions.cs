@@ -5,7 +5,7 @@ namespace Content.IntegrationTests.NUnit.Constraints;
 
 public static class SolutionConstraintExtensions
 {
-    extension(Contains)
+    extension(Has)
     {
         public static ReagentConstraint Reagent(ReagentId reagent)
         {
