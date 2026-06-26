@@ -38,6 +38,7 @@ public sealed class LogWindowTest : InteractionTest
         var cont = logWindow.Logs.LogsContainer;
 
         // Search for the log we added earlier.
+        await RunTicksSync(1);
         await Client.WaitPost(() => search.Text = guid.ToString());
         await ClickControl(refresh);
         await RunTicks(10);
